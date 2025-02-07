@@ -621,7 +621,7 @@ console.log(obj3);
 }
 
 
-// через switch
+// //через switch
 // {
 //     let day = +prompt('day');
 //

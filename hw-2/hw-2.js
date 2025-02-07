@@ -184,43 +184,44 @@ console.log(obj1)
 // до якої четверті години попадає число
 // (в першу, другу, третю или четверту частину години).
 
-//
-// {
-//     let time = +prompt('time')
-//     if (time > 0 && time <= 15){
-//         console.log('1 чверть: ', time, 'хв');
-//     } else if (time > 15 && time <= 30){
-//         console.log('2 чверть: ', time, 'хв');
-//     }else if (time > 30 && time <= 45){
-//         console.log('3 чверть: ', time, 'хв');
-//     }else if (time > 45 && time <= 59){
-//         console.log('4 чверть: ', time, 'хв');
-//     } else {
-//         console.log('error');
-//     }
-// }
+
+{
+    let time = +prompt('time')
+    if (time > 0 && time <= 15){
+        console.log('1 чверть: ', time, 'хв');
+    } else if (time > 15 && time <= 30){
+        console.log('2 чверть: ', time, 'хв');
+    }else if (time > 30 && time <= 45){
+        console.log('3 чверть: ', time, 'хв');
+    }else if (time > 45 && time <= 59){
+        console.log('4 чверть: ', time, 'хв');
+    } else {
+        console.log('error');
+    }
+}
 
 // ------------------------------------------------
 // #UMoNq4biWGe
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду)
 // місяця потрапляє це число (у першу, другу чи третю).
 
-// {
-//
-//     let day = +prompt('day')
-//     if (day >= 1 && day <= 10){
-//         console.log('1 декада: ', day);
-//     } else if (day > 10 && day <= 20){
-//         console.log('2 декада: ', day);
-//     }else if (day > 20 && day <= 31){
-//         console.log('3 декада: ', day);
-//     } else {
-//         console.log('error');
-//     }
-//
-// }
+{
+
+    let day = +prompt('day')
+    if (day >= 1 && day <= 10){
+        console.log('1 декада: ', day);
+    } else if (day > 10 && day <= 20){
+        console.log('2 декада: ', day);
+    }else if (day > 20 && day <= 31){
+        console.log('3 декада: ', day);
+    } else {
+        console.log('error');
+    }
+
+}
 
 
+// через switch
 // {
 //     let day = +prompt('day');
 //
@@ -245,35 +246,35 @@ console.log(obj1)
 //
 
 
-// {
-//     let day = prompt('day');
-//     switch (day){
-//         case '1':
-//             console.log('Monday');
-//             break;
-//         case '2':
-//             console.log('Tuesday');
-//             break;
-//         case '3':
-//             console.log('Wednesday');
-//             break;
-//         case '4':
-//             console.log('Thursday');
-//             break;
-//         case '5':
-//             console.log('Friday');
-//             break;
-//         case '6':
-//             console.log('Saturday');
-//             break;
-//         case '7':
-//             console.log('Sunday');
-//             break;
-//         default:
-//             console.log('error');
-//
-//     }
-// }
+{
+    let day = prompt('day');
+    switch (day){
+        case '1':
+            console.log('Monday');
+            break;
+        case '2':
+            console.log('Tuesday');
+            break;
+        case '3':
+            console.log('Wednesday');
+            break;
+        case '4':
+            console.log('Thursday');
+            break;
+        case '5':
+            console.log('Friday');
+            break;
+        case '6':
+            console.log('Saturday');
+            break;
+        case '7':
+            console.log('Sunday');
+            break;
+        default:
+            console.log('error');
+
+    }
+}
 
 
 
@@ -285,27 +286,27 @@ console.log(obj1)
 //         Також потрібно врахувати коли введені рівні числа.
 
 
-// {
-//     let a = +prompt('a');
-//     let b = +prompt('b');
-//
-//
-//     switch (true){
-//         case (a>b):
-//             console.log(a);
-//             break;
-//         case (b>a):
-//             console.log(b);
-//             break;
-//         case (a===b):
-//             console.log(a + '=' + b);
-//             break;
-//         default:
-//             console.log('error');
-//
-//     }
-//
-// }
+{
+    let a = +prompt('a');
+    let b = +prompt('b');
+
+
+    switch (true){
+        case (a>b):
+            console.log(a);
+            break;
+        case (b>a):
+            console.log(b);
+            break;
+        case (a===b):
+            console.log(a + '=' + b);
+            break;
+        default:
+            console.log('error');
+
+    }
+
+}
 
 
 // ----------------------------------------------
@@ -318,24 +319,24 @@ console.log(obj1)
 
 
 // пояснив чат
-// {
-//     let x = prompt('x'); // prompt завжди повертає рядок
-//
-//     console.log(typeof x, x);
-//
-//     switch (x) {
-//         case "": // Якщо введений порожній рядок
-//         case "0": // Якщо введено "0" (рядок)
-//         case "null": // Якщо введено "null" (рядок)
-//         case "undefined": // Якщо введено "undefined" (рядок)
-//             x = "default"; // Замінюємо на "default"
-//             console.log(x);
-//             break;
-//         default:
-//             console.log(x); // Виводимо будь-яке введене слово без змін
-//     }
-//
-// }
+{
+    let x = prompt('x'); // prompt завжди повертає рядок
+
+    console.log(typeof x, x);
+
+    switch (x) {
+        case "": // Якщо введений порожній рядок
+        case "0": // Якщо введено "0" (рядок)
+        case "null": // Якщо введено "null" (рядок)
+        case "undefined": // Якщо введено "undefined" (рядок)
+            x = "default"; // Замінюємо на "default"
+            console.log(x);
+            break;
+        default:
+            console.log(x); // Виводимо будь-яке введене слово без змін
+    }
+
+}
 
 
 
@@ -356,12 +357,20 @@ console.log(obj1)
         {title: 'Frontend', monthDuration: 4}
     ];
 
-let a = coursesAndDurationArray.monthDuration;
 
 
-    if(a >= 5){
-        console.log('Супер');
-    }
+   for (let k = 0; k <= coursesAndDurationArray.length-1; k++ ){
+
+       let a = coursesAndDurationArray[k].monthDuration;
+
+       if (a >= 5){
+           console.log(a, 'Супер');
+       } else {
+           console.log(a, 'Погано');
+       }
+   }
+
+
 
 }
 

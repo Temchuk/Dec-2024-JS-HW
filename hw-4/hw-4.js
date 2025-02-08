@@ -1,20 +1,41 @@
+
+
 // #I2XsG6f
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
-
+{
+    function  Area (a, b){
+       let s= a*b;
+        console.log(s);
+    }
+    Area(2, 3);
+}
 
 
 // #ETGAxbEn8l
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
+{
+    function circle (r){
+        const PI =3.14;
+         let s = PI*r*r;
+        console.log(s);
 
-
-
+        // s =Math.PI * Math.pow(r, 2);
+    }
+    circle(2);
+}
 
 
 // #Mbiz5K4yFe7
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 
-
+{
+    function cylinder (r, h){
+       let s = 2 * Math.PI * r *h;
+        console.log(s);
+    }
+    cylinder(2, 5);
+}
 
 
 
@@ -22,7 +43,16 @@
 // - створити функцію яка приймає масив та виводить кожен його елемент
 
 
+{
+    let arrys = [5, 2, 3, 0, true, 'ttt'];
 
+    function printArr(){
+        for (const argument of arguments) {
+            console.log(argument);
+        }
+    }
+    printArr(arrys);
+}
 
 // #59g0IsA
 // - створити функцію яка створює параграф з текстом та виводить його через document.write.

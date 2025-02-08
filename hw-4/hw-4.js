@@ -76,7 +76,7 @@
 {
     let str = 'yyyyyyy';
 
-    function ul (a){
+    function ulFun (a){
 
         document.write(`<ul>`);
         for (let i = 0; i < 3; i++) {
@@ -84,7 +84,7 @@
         }
         document.write(`</ul>`);
     }
-    ul(str);
+    ulFun(str);
 }
 
 
@@ -93,7 +93,19 @@
 // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл) та
 // виводить його через document.write
 
+{
+    let str = 'wwww';
 
+    function ulFunK (a, k){
+
+        document.write(`<ul>`);
+        for (let i = 0; i < k; i++) {
+            document.write(`<li>${a}</li>`);
+        }
+        document.write(`</ul>`);
+    }
+    ulFunK(str, 5);
+}
 
 
 // #gEFoxMMO
@@ -101,12 +113,37 @@
 // будує для них список (ul li) та виводить його через document.write
 
 
+{
+    let arrys = [5, 2, 3, 0, true, 'ttt'];
 
+    function gEFoxMMO (arr){
+
+        document.write(`<ul>`);
+        for (const aElement of arr) {
+            document.write(`<li>${aElement}</li>`);
+        }
+        document.write(`</ul>`);
+    }
+    gEFoxMMO(arrys);
+}
 
 // #bovDJDTIjt
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та
 // виводить їх в документ. Для кожного об'єкту окремий блок.
+{
+    let users = [
+        {id: 'k1', name: 'olena', age: 22},
+        {id: 'k2', name: 'oleg', age: 45},
+        {id: 'k3', name: 'olesia', age: 21}
+    ];
 
+    function usersArr (arr){
+        for (const item of arr) {
+                document.write(`<h1>${item.id} ${item.name} ${item.age}</h1>`);
+        }
+    }
+    usersArr(users);
+}
 
 
 

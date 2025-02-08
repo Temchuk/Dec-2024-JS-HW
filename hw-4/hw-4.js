@@ -46,7 +46,7 @@
 {
     let arrys = [5, 2, 3, 0, true, 'ttt'];
 
-    function printArr(){
+    function printArr(arr){
         for (const argument of arguments) {
             console.log(argument);
         }
@@ -59,14 +59,33 @@
 // Текст задати через аргумент
 
 
+{
+    let str = 'ttttt';
 
+    function printString (string){
+        document.write(`<p>${string}</p>`);
+    }
+    printString(str);
+}
 
 
 // #hOL6126
 // - створити функцію яка створює ul з трьома елементами li та виводить його через document.write.
 // Текст li задати через аргумент всім однаковий
 
+{
+    let str = 'yyyyyyy';
 
+    function ul (a){
+
+        document.write(`<ul>`);
+        for (let i = 0; i < 3; i++) {
+            document.write(`<li>${a}</li>`);
+        }
+        document.write(`</ul>`);
+    }
+    ul(str);
+}
 
 
 // #0Kxco1edSN

@@ -197,19 +197,32 @@
 
 
 {
+    console.log('*************************************************');
 
-    function swap(arr, index1, index2){
+    function swap(arr, index0, index1){
 
-        let b = arr[0];
-        let c = arr[1];
+        let b = arr[index0];
+        arr[index0] = arr[index1];
+        arr[index1] =  b;
 
-        arr[1] = b;
-        arr[0] = c;
+
        return arr;
 
+    }
+    let  a = swap([11,22,33,44],0,2);
+    console.log(a);
+}
+
+//тільки сусідні міняє
+{
+    function swap(arr, index1, index2){
+
+        [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
+
+        return arr;
 
     }
-    let  a = swap([11,22,33,44],0,1);
+    let  a = swap([11,22,33,44], 1, 2);
     console.log(a);
 }
 
@@ -222,17 +235,26 @@
 // Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
 
 
-
+// з відео про розбір домашки
 {
-    function exchange(sumUAH,currencyValues,exchangeCurrency){
-       let USD = sumUAH/currencyValues;
-       let EUR = sumUAH/exchangeCurrency;
-       document.write(`UAH:${sumUAH} - USD:${USD.toFixed(2)} - EUR:${EUR.toFixed(2)}`)
-        return sumUAH;
-    }
-    let  a = exchange(10000, 25, 42);
-    console.log(a);
+    function exchange(sumUAH,currencyValues,EurDolar){
 
+        let valuta;
+        for (const i of currencyValues) {
+            if (i.currency === EurDolar){
+                valuta = i;
+            }
+        }
+        res =  sumUAH / valuta.value;
+        return res;
+}
+
+    // currencyValues = [
+    //     {currency:'USD',value:25},
+    //     {currency:'EUR',value:42}
+    // ];
+
+    console.log(exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD'));
 }
 
 

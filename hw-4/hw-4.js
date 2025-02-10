@@ -215,14 +215,14 @@
 
 //тільки сусідні міняє
 {
-    function swap(arr, index1, index2){
+    function swap1(arr, index1, index2){
 
         [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
 
         return arr;
 
     }
-    let  a = swap([11,22,33,44], 1, 2);
+    let  a = swap1([11,22,33,44], 1, 2);
     console.log(a);
 }
 

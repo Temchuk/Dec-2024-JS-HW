@@ -197,7 +197,6 @@
 
 
 {
-    // let arrys = [11,22,33,44];
 
     function swap(arr, index1, index2){
 

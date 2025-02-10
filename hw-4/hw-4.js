@@ -149,18 +149,92 @@
 
 //     #pghbnSB
 // - створити функцію яка повертає найменьше число з масиву
+
+{
+    let arrys = [-10,1 , 1, 2, 10, -5, 6, 0];
+
+    function minArg(arg) {
+        let minA = arg[0];
+        for (let i = 1; i < arg.length; i++) {
+            let argElement = arg[i];
+            if (minA > argElement) {
+                minA = argElement;
+            }
+        }
+        return minA;
+    }
+
+    let a = minArg(arrys);
+    console.log(a);
+}
+
+
+
+
+
+
+
 // #EKRNVPM
 // - створити функцію sum(arr) яка приймає масив чисел, сумує значення елементів масиву та повертає його.
 // Приклад sum([1,2,10]) //->13
 
-
+{
+    let  arr = [1,2,10];
+    function sum (arr){
+        let b = 0;
+        for (const elem of arr) {
+            b = b + elem;
+        }
+        return b;
+    }
+    let c =  sum(arr);
+    console.log(c);
+}
 
 // #kpsbSQCt2Lf
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відповідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 
 
+{
+    // let arrys = [11,22,33,44];
+
+    function swap(arr, index1, index2){
+
+        let b = arr[0];
+        let c = arr[1];
+
+        arr[1] = b;
+        arr[0] = c;
+       return arr;
+
+
+    }
+    let  a = swap([11,22,33,44],0,1);
+    console.log(a);
+}
+
+
+
+
 
 // #mkGDenYnNjn
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
+
+
+
+{
+    function exchange(sumUAH,currencyValues,exchangeCurrency){
+       let USD = sumUAH/currencyValues;
+       let EUR = sumUAH/exchangeCurrency;
+       document.write(`UAH:${sumUAH} - USD:${USD.toFixed(2)} - EUR:${EUR.toFixed(2)}`)
+        return sumUAH;
+    }
+    let  a = exchange(10000, 25, 42);
+    console.log(a);
+
+}
+
+
+

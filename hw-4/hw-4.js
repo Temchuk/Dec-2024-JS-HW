@@ -7,6 +7,7 @@
     function  Area (a, b){
        let s= a*b;
         console.log(s);
+        return s;
     }
     Area(2, 3);
 }

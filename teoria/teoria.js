@@ -5,6 +5,7 @@
 
 
 // -------------------------------------- математика------------------------
+//математика
 // Math.round(s);   // заокруглення до цілого
 //
 // s.toFixed(3); //заокреглення до 3 чисел після коми
@@ -15,7 +16,7 @@
 
 
 // -------------------------------------- МАСИВИ------------------------
-//
+// масива
 //
 // a.forEach(i);  //перебір елементів масиву
 //
@@ -47,3 +48,96 @@
 
 
 // Замість циклу for...of використано метод find, який знаходить перший елемент масиву a.find(i)
+
+
+// let arr = [];
+// console.log(Array.isArray(arr)); // перевіряє чи масив є масивом
+
+// console.log(arr.push('new element1')); // додає в кінець масиву новий елемент
+
+
+
+
+
+
+
+// console.log(arr.unshift('!!!')); // додає в початок
+// console.log(arr.push('new element1')); // додає в кінець
+
+// console.log(arr.shift()); // видаляє з початку
+// console.log(arr.pop()); //  видаляє з кінця
+
+
+
+//arr.join(';'); // зєднує масиви через ;
+// let arr2 = arr1.concat(nums); // до масиву arr1 додає масив nums
+
+
+//nums.reverse() // реверс
+
+
+// let arr3 = arr4.slice(0, 4); //залишив з 0 по 3 а решта викинув
+//  console.log(splice(0, 4)); //видаляє прям то шо сказали (від 0 до 3) ,а решта залишить
+
+// // let splice = concat.splice(0, 2, '!!!', '#$%^', '*&&^%$65'); (приймає 1 початок ,2 скільки ,3 заміна)
+
+
+// // concat.splice(concat.indexOf(11), 1); // видаляє 1 елесмен (число 11)
+// console.log(concat.includes(11)); // чи є в масиві елемент 11
+
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+//  сайт зі всіма методами (array.js methods)
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------------------------------------------------------------------------
+//стрінга
+
+// {
+//     let str = 'hello okten !!!';
+//     console.log(str);
+// // let s = str.concat('!!!'); // дописує в кінець рядку
+// // console.log(s);
+//     console.log(str.toUpperCase()); // всі з великої
+//     console.log(str.toLowerCase()); // всі з малої
+//     console.log(str.startsWith('hel')); // true якшо є такий початок
+//     console.log(str.endsWith('en')); // true якшо є такий кінець
+//     console.log(str.substring(0, 7)); // обрізає і  виводить всі букви до 7 індекса не включно
+//     console.log(str.indexOf('o')); // порядковий номер з початку
+//     console.log(str.lastIndexOf('o')); // порядковий номер з кінця
+//     console.log(str.indexOf('o', 5)); // порядковий номер після 5 символу
+//     console.log(str.charAt(8)); // який симфол під цим номером
+// // console.log(str.replace('e', '!')); // замінює тільки першу яку знайшов
+//     console.log(str.replaceAll('e', '!')); // замінює всі які знайшов
+//     let split = str.split(' '); // розділяє по пробілу і створює  всевдомасив
+//     console.log(split); // ось цей
+
+// console.log(concat.includes(11)); // чи є  елемент 11
+
+
+
+// }
+
+//-------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

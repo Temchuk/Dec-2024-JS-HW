@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 // #dFeorS3m7u
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
@@ -7,16 +14,32 @@
 // #ClDsAm7xba7
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
+
+
+
+
 // #0b89BkYZwu
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 //
+
+
+
+
+
 //     #bfoJuse4ZzP
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str = 'Ревуть воли як ясла повні';
 // let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
 //
+
+
+
 // #Rbr5kEQ
-// - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
+// - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві
+// на стрінгові.
+
+
+
 // #5hqyKTfmc
 // - створити функцію sortNums(array,direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
 //     let nums = [11,21,3];
@@ -24,6 +47,10 @@
 // sortNums(nums,'descending') // [21,11,3]
 //
 // ==========================
+
+
+
+
 // #yo06d74c1C
 // - є масив
 // let coursesAndDurationArray = [
@@ -37,6 +64,10 @@
 // -- відсортувати його за спаданням за monthDuration
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+
+
+
+
 // =========================
 //     #bolvdlhP
 // описати колоду карт (від 6 до туза без джокерів)
@@ -54,6 +85,13 @@
 //
 // =========================
 //
+
+
+
+
+
+
+
 //     #EP5I1UUzAX
 // Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
 // {
@@ -63,7 +101,62 @@
 //     clubs:[]
 // }
 // =========================
+
+
+
+
+
 // #4LJn7zBx
 // взяти з arrays.js масив coursesArray
 // --написати пошук всіх об'єктів, в яких в modules є sass
 // --написати пошук всіх об'єктів, в яких в modules є docker
+
+
+
+
+
+
+
+
+
+
+{
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+
+    users.forEach(function (value) {
+        console.log(value);
+    });
+    // //
+    // // users.forEach(value => console.log(value));
+    // //
+    // // let filteredUsers = users.filter(value => value.age > 30);
+    // // console.log(filteredUsers);
+    // // console.log(users);
+    // //
+    // // let mapedUsers = users.map(function (value, index) {
+    // //     return {...value, id: index + 1};
+    // // });
+    // // console.log(mapedUsers);
+    // //
+    // // users.map((value, index) => {
+    // //     return {id: index + 1, name: value.name, age: value.age, status: value.status}
+    // // })
+    // //
+    // //
+    // // let find = users.find(value => value.name === 'max');
+    // // console.log(find);
+}

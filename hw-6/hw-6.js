@@ -1,54 +1,118 @@
 
-
-
-
-
-
-
 // #dFeorS3m7u
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
+{
+    let myArray = ['hello world', 'lorem ipsum', 'javascript is cool'];
+    let printArray = (arr) =>   arr.forEach((i) => {console.log(i, i.length);});
+    printArray(myArray);
+}
+//-------------------------------------------------------------------------------------------------------
+
 // #8lld9HMxXWB
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
+{
+let str1 = 'hello world';
+let str2 = 'lorem ipsum';
+let str3 = 'javascript is cool';
+      console.log(str1.toUpperCase()); // всі з великої
+      console.log(str2.toUpperCase()); // всі з великої
+      console.log(str3.toUpperCase()); // всі з великої
+
+    //або
+    let myArray = ['hello world', 'lorem ipsum', 'javascript is cool'];
+    let printArray = (arr) =>   arr.forEach((i) => {console.log(i.toUpperCase());});
+    printArray(myArray);
+}
+// ----------------------------------------------------------------------------------------------------------
+
+
 // #ClDsAm7xba7
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
-
-
-
+{
+    let myArray = ['hello world', 'lorem ipsum', 'javascript is cool'];
+    let printArray = (arr) =>   arr.forEach((i) => {console.log(i.toLowerCase());});
+    printArray(myArray);
+}
+//-----------------------------------------------------------------------------------------------------
 
 // #0b89BkYZwu
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
-//
+{
+    let str = ' dirty string   ';
+    let cleanedStr = str.trim();
 
-
-
-
+    console.log(cleanedStr);
+}
+//--------------------------------------------------------------------------------------------------
 
 //     #bfoJuse4ZzP
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str = 'Ревуть воли як ясла повні';
 // let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
 //
-
-
+{
+    let str = 'Ревуть воли як ясла повні';
+    let arr = str.split(' '); // розділяє по пробілу і створює  всевдомасив
+    console.log(arr); // ось цей
+}
+//--------------------------------------------------------------------------------------------------
 
 // #Rbr5kEQ
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві
 // на стрінгові.
-
-
+{
+    let numbers = [10,8,-7,55,987,-1011,0,1050,0];
+    let arr = numbers.map(num => num.toString());
+    console.log(arr);
+    // console.log(typeof arr[0]);
+}
+//----------------------------------------------------------------------------------------------------
 
 // #5hqyKTfmc
-// - створити функцію sortNums(array,direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
+// - створити функцію sortNums(array,direction), яка прймає масив чисел, та сортує його від більшого
+// до меньшого, або навпаки в залежності від значення аргументу direction.
 //     let nums = [11,21,3];
 // sortNums(nums,'ascending') // [3,11,21]
 // sortNums(nums,'descending') // [21,11,3]
 //
 // ==========================
+{
+    let nums = [11,21,3];
 
+    let sortNums = (array,direction) => {
+        if (direction === 'ascending'){
+            console.log(nums.sort((a, b) => {
+                if (a < b) {
+                    return -1;
+                }
+                if (a > b) {
+                    return 1
+                }
+                if (a === b) {
+                    return 0
+                }
+            }));
 
+        } else if (direction === 'descending'){
+            console.log(nums.sort((a, b) => {
+                if (a < b) {
+                    return 1;
+                }
+                if (a > b) {
+                    return -1
+                }
+                if (a === b) {
+                    return 0
+                }
+            }));
+        }
+}
+    sortNums(nums, 'descending');
+}
+//-------------------------------------------------------------------------------------------------------
 
 
 // #yo06d74c1C
@@ -120,43 +184,3 @@
 
 
 
-{
-
-    let users = [
-        {name: 'vasya', age: 31, status: false},
-        {name: 'petya', age: 30, status: true},
-        {name: 'kolya', age: 29, status: true},
-        {name: 'olya', age: 28, status: false},
-        {name: 'max', age: 30, status: true},
-        {name: 'anya', age: 31, status: false},
-        {name: 'oleg', age: 28, status: false},
-        {name: 'andrey', age: 29, status: true},
-        {name: 'masha', age: 30, status: true},
-        {name: 'olya', age: 31, status: false},
-        {name: 'max', age: 31, status: true}
-    ];
-
-
-    users.forEach(function (value) {
-        console.log(value);
-    });
-    // //
-    // // users.forEach(value => console.log(value));
-    // //
-    // // let filteredUsers = users.filter(value => value.age > 30);
-    // // console.log(filteredUsers);
-    // // console.log(users);
-    // //
-    // // let mapedUsers = users.map(function (value, index) {
-    // //     return {...value, id: index + 1};
-    // // });
-    // // console.log(mapedUsers);
-    // //
-    // // users.map((value, index) => {
-    // //     return {id: index + 1, name: value.name, age: value.age, status: value.status}
-    // // })
-    // //
-    // //
-    // // let find = users.find(value => value.name === 'max');
-    // // console.log(find);
-}

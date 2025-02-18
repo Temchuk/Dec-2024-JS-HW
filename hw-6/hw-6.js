@@ -129,7 +129,36 @@ let str3 = 'javascript is cool';
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 
+{
 
+    let coursesAndDurationArray = [
+        {title: 'JavaScript Complex', monthDuration: 5},
+        {title: 'Java Complex', monthDuration: 6},
+        {title: 'Python Complex', monthDuration: 6},
+        {title: 'QA Complex', monthDuration: 4},
+        {title: 'FullStack', monthDuration: 7},
+        {title: 'Frontend', monthDuration: 4}
+    ]
+
+    let sort = coursesAndDurationArray.sort((a1, a2) => {
+        return a2.monthDuration - a1.monthDuration;
+    })
+    console.log(sort);
+
+
+
+    let sort2 = coursesAndDurationArray.filter((a1) => {
+        return a1.monthDuration > 5;
+    })
+    console.log(sort2);
+
+
+    let sort3 = coursesAndDurationArray.map((a1, a2) => {
+        return {id:a2 + 1, ...a1};
+    })
+    console.log(sort3);
+
+}
 
 
 // =========================
@@ -175,7 +204,34 @@ let str3 = 'javascript is cool';
 // --написати пошук всіх об'єктів, в яких в modules є sass
 // --написати пошук всіх об'єктів, в яких в modules є docker
 
+{
 
+    let arr = [
+        {title: 'JavaScript Complex', monthDuration: 5,modules: "sass" },
+        {title: 'Java Complex', monthDuration: 6 ,modules: "sass"},
+        {title: 'Python Complex', monthDuration: 6 ,modules: "sass"},
+        {title: 'QA Complex', monthDuration: 4 ,modules: "docker"},
+        {title: 'FullStack', monthDuration: 7 ,modules: "sass"},
+        {title: 'Frontend', monthDuration: 4 ,modules: "docker"}
+    ]
+
+    let sort4 = arr.filter((a1, a2) => {
+        return a1.modules === "sass";
+    })
+    console.log(sort4);
+
+
+    let sort5 = arr.reduce((a1, arr) => {
+       if (arr.modules === "sass") {
+           a1.hhh1.push(arr);
+       } else  {
+           a1.hhh2.push(arr);
+       }
+return a1;
+    },{hhh1: [], hhh2: []});
+
+    console.log(sort5);
+}
 
 
 

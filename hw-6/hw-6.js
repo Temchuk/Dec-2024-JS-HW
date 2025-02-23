@@ -115,6 +115,16 @@ let str3 = 'javascript is cool';
 //-------------------------------------------------------------------------------------------------------
 
 
+
+
+
+
+
+
+
+
+
+
 // #yo06d74c1C
 // - є масив
 // let coursesAndDurationArray = [
@@ -140,10 +150,10 @@ let str3 = 'javascript is cool';
         {title: 'Frontend', monthDuration: 4}
     ]
 
-    let sort = coursesAndDurationArray.sort((a1, a2) => {
+    let sort1 = coursesAndDurationArray.sort((a1, a2) => {
         return a2.monthDuration - a1.monthDuration;
     })
-    console.log(sort);
+    console.log(sort1);
 
 
 
@@ -159,7 +169,7 @@ let str3 = 'javascript is cool';
     console.log(sort3);
 
 }
-
+// ---------------------------------------------------------------------------------------------
 
 // =========================
 //     #bolvdlhP
@@ -176,11 +186,71 @@ let str3 = 'javascript is cool';
 //     color:'', // 'red','black'
 // }
 //
-// =========================
-//
+{
 
+    let coloda = [
+        {cardSuit: 'spade', value: ['6', '7', '8', '9', '10', 'ace','jack','queen','king'], color: 'black'},
+        {cardSuit:'diamond', value:  ['6', '7', '8', '9', '10', 'ace','jack','queen','king'], color: 'red'},
+        {cardSuit:'heart', value:  ['6', '7', '8', '9', '10', 'ace','jack','queen','king'], color: 'red'},
+        {cardSuit:'clubs', value:  ['6', '7', '8', '9', '10', 'ace','jack','queen','king'], color: 'black'}
+        ];
 
+    // console.log(coloda);
 
+    function change(value,  choice) {
+        const newObj = {
+            '6': 6,
+            '7': 7,
+            '8': 8,
+            '9': 9,
+            '10': 10,
+            'ace': 11,
+            'jack': 12,
+            'queen': 13,
+            'king': 14
+        };
+        const ekvivalent= newObj[value] || 0;
+        return ekvivalent > choice;
+    }
+
+function poshuk (coloda,  {mast, znachenny, color, choice } = {}) {
+    coloda.forEach((karta) => {
+        if (color === undefined || karta.color === color) {
+
+            if (mast === undefined || karta.cardSuit === mast) {
+                karta.value.forEach((value)=> {
+                    if (znachenny === undefined || value === znachenny) {
+                        if (choice === undefined || change(value, choice)) {
+                            console.log(`${karta.cardSuit} ${value} ${karta.color}`);
+                        }
+
+                    }
+                });
+            }
+        }
+
+    });
+
+}
+
+    console.log("конкретна карта");
+    poshuk( coloda, {mast: 'spade', znachenny: '10', color: 'black' });
+    console.log("*************************");
+    console.log("всі буби");
+    poshuk(coloda, {mast: 'spade',  color: 'black' });
+    console.log("*************************");
+    console.log("всі шістки");
+    poshuk(coloda, { znachenny: '6' });
+    console.log("*************************");
+    console.log("всі червоні карти");
+    poshuk(coloda, { color: 'red' , });
+    console.log("*************************");
+    console.log("всі старші карти");
+    poshuk( coloda, {  mast: 'spade', choice: 9 });
+
+}
+
+// --------------------------------------------------------------------------------------------------
 
 
 
@@ -189,15 +259,35 @@ let str3 = 'javascript is cool';
 // Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
 // {
 //     spades:[],
-//         diamonds:[],
+//     diamonds:[],
 //     hearts:[],
 //     clubs:[]
 // }
-// =========================
+
+{
+    let coloda = [
+        {cardSuit: 'spade', value: ['6', '7', '8', '9', '10', 'ace','jack','queen','king'], color: 'black'},
+        {cardSuit:'diamond', value:  ['6', '7', '8', '9', '10', 'ace','jack','queen','king'], color: 'red'},
+        {cardSuit:'heart', value:  ['6', '7', '8', '9', '10', 'ace','jack','queen','king'], color: 'red'},
+        {cardSuit:'clubs', value:  ['6', '7', '8', '9', '10', 'ace','jack','queen','king'], color: 'black'}
+    ];
+
+    const groupeSuit = coloda.reduce((acc, mast) => {
+        const suit = mast.cardSuit;
+        if (!acc[suit]) {
+            acc[suit] = []; // друкує пустий масив якщо такої масті немає
+        }
+        acc[suit].push(mast);// додає весь обєкт масті до асс (АКУМУЛЯТОР)
+        return acc;
+    }, {});
+
+    const newColoda = groupeSuit['heart'];
+    console.log(newColoda);
+
+}
 
 
-
-
+// ---------------------------------------------------------
 
 // #4LJn7zBx
 // взяти з arrays.js масив coursesArray
@@ -205,30 +295,94 @@ let str3 = 'javascript is cool';
 // --написати пошук всіх об'єктів, в яких в modules є docker
 
 {
-
     let arr = [
-        {title: 'JavaScript Complex', monthDuration: 5,modules: "sass" },
-        {title: 'Java Complex', monthDuration: 6 ,modules: "sass"},
-        {title: 'Python Complex', monthDuration: 6 ,modules: "sass"},
-        {title: 'QA Complex', monthDuration: 4 ,modules: "docker"},
-        {title: 'FullStack', monthDuration: 7 ,modules: "sass"},
-        {title: 'Frontend', monthDuration: 4 ,modules: "docker"}
-    ]
+        {
+            title: 'JavaScript Complex',
+            monthDuration: 5,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+        },
+        {
+            title: 'Java Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'java core',
+                'java advanced']
+        },
+        {
+            title: 'Python Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'angular',
+                'aws',
+                'docker',
+                'python core',
+                'python advanced']
+        },
+        {
+            title: 'QA Complex',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+        },
+        {
+            title: 'FullStack',
+            monthDuration: 7,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'react',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'node.js',
+                'python',
+                'java']
+        },
+        {
+            title: 'Frontend',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+        }
+    ];
 
-    let sort4 = arr.filter((a1, a2) => {
-        return a1.modules === "sass";
+
+
+    let sort4 = arr.filter((a1, i) => {
+        return a1.modules.includes('sass');
     })
     console.log(sort4);
 
 
-    let sort5 = arr.reduce((a1, arr) => {
-       if (arr.modules === "sass") {
-           a1.hhh1.push(arr);
+    let sort5 = arr.reduce((acc, arr) => {
+       if (arr.modules.includes('sass')) {
+           acc.arr1.push(arr);
+       } else if (arr.modules.includes('docker')) {
+           acc.arr2.push(arr);
        } else  {
-           a1.hhh2.push(arr);
+           acc.arr3.push(arr);
        }
-return a1;
-    },{hhh1: [], hhh2: []});
+return acc;
+    },{arr1: [], arr2: [], arr3: []});
 
     console.log(sort5);
 }

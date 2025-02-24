@@ -10,34 +10,33 @@
 
 
 {
-    let User = {
-        id,
-        name,
-        surname,
-        email,
-        phone
-    };
+    function User(id, name, surname, email, phone) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+    }
 
-    let arr = [];
-}
+    let users = [
+        new User(11, 'hffh', 'kkk', 'uiui', '+3646525'),
+        new User(1, 'hffh', 'kkk', 'uiui', '+3646525'),
+        new User(14, 'hffh', 'kkk', 'uiui', '+3646525'),
+        new User(12, 'hffh', 'kkk', 'uiui', '+3646525'),
+    ];
 
-
-
+    // console.log(users);
 
 
 // #2ikXsE2WiKZ
-// - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+// - Взяти масив з  User[] з попереднього завдання, та відфільтрувати ,
+// залишивши тільки об'єкти з парними id (filter)
 //
+    let sort1 = users.filter((value, index) => {
+        return value.id % 2 === 0;
 
-
-
-
-
-
-
-
-
-
+    })
+    console.log(sort1);
 
 
 // #pOeHKct
@@ -45,43 +44,47 @@
 //
 
 
+    let sort2 = users.sort((a1, a2) => {
+        return a1.id - a2.id;
 
-
-
-
-
-
-
-
-
+    })
+    console.log(sort2);
+}
 
 // #nkMXISv
-// - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+// - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом
+// зі списком товарів)
 // створити пустий масив, наповнити його 10 об'єктами Client
-//
-//
 
+{
 
+    function Client(id, name, surname, email, phone, order) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.phone = phone;
+        this.order = order;
+    }
 
+    let clients = [
+        new Client(1, "вуа", "рлртир", "tth", "+380991234567", ["Замовлення 1", "Замовлення 2", "Замовлення 3","Замовлення 4"]),
+        new Client(2, "ее", "рлил", "hhh", "+380991234567", ["Замовлення 1", "Замовлення 2"]),
+        new Client(3, "щщ", "Пбд ьтб", "ddd", "+380991234567", ["Замовлення 1", "Замовлення 2", "Замовлення 3"]),
 
-
-
-
-
-
-
+    ]
+    console.log(clients);
 
 
 
 // #8abtVjRv
-// - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
-//
-//
+// - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості
+// товарів в полі order по зростанню. (sort)
 
+    let sort3 = clients.sort((a1, a2) => a1.order.length - a2.order.length);
+    console.log(sort3);
 
-
-
-
+}
 
 
 

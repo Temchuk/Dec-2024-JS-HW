@@ -92,25 +92,77 @@
 
 
 // #vV9a6584I5
-// - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+// - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник,
+// рік випуску, максимальна швидкість, об'єм двигуна.
+// додати в об'єкт функції:
 // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
 // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
-// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в
+// поточний об'єкт car
 //
 //
+{
+    function Car(model, manufacturer, year, speed, engine) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.speed = speed;
+        this.engine = engine;
+    }
+
+    let cars = [
+        new Car('BMV', 'jjjj', '2000', '200', '1.9'),
+        new Car('WV', 'jrrr', '2001', '180', '2'),
+        new Car('Opel', 'jttt', '2002', '160', '2.1'),
+        new Car('Reno', 'uuj', '2003', '220', '1.8'),
+    ];
+
+    function drive(arr) {
+        arr.forEach((i) => {
+            console.log(`їдемо зі швидкістю ${i.speed} на годину`);
+        });
+    }
+
+    drive(cars);
+
+    function info(arr) {
+        arr.forEach((i) => {
+            console.log(`model:${i.model}, manufacturer:${i.manufacturer}, year :${i.year}, speed:${i.speed}, engine:${i.engine}`);
+        });
+    }
+
+    info(cars);
+
+    function increaseMaxSpeed(arr, newSpeed) {
+        arr.forEach((i) => {
+            console.log(`їдемо зі швидкістю ${+i.speed + newSpeed} на годину`);
+        });
+    }
+
+    increaseMaxSpeed(cars, 50);
+
+    function changeYear(arr, newValue) {
+        arr.forEach((i) => {
+            i.year = newValue;
+            console.log(`model:${i.model}, рік випуску ${newValue}`);
+        });
+    }
+
+    changeYear(cars, 2010);
 
 
+    function addDriver(arr, driver) {
+        arr.forEach((i) => {
+            i.driver = driver;
+        });
+    }
 
+    addDriver(cars, 'ivan');
+    console.log(cars);
 
-
-
-
-
-
-
-
+}
 
 // #5kla3yMpgp
 // - (Те саме, тільки через клас)
@@ -123,9 +175,16 @@
 //
 //
 //
+console.log('******************************************************************');
+
+{
 
 
 
+
+
+
+}
 
 
 

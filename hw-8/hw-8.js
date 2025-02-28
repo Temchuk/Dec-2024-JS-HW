@@ -2,17 +2,61 @@
 
 
 
-// #dYQNrBV
-// Створити змінні. Присвоїти кожному з них значення: 'hello','owu','com', 'ua', 1, 10, -999, 123, 3.14, 2.7, 16, true, false.
-//     Вивести кожну змінну за допомогою: console.log
-//
-// #6Qb97gsv
-// - Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ. З'єднати їх в одну змінну person (Не об'єкт, просто за допомоги конкатенації)
-//
-// #4N0y5tufA
-// - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
-//     let a = 100; let b = '100'; let c = true;
-//
-// #ruUtWDUI
-// Додаткове для тих хто цікавився prompt`oм
-// - За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
+
+
+
+
+
+
+
+
+// #AiN5CoUQ
+// Створити функцію, яка робить глибоку копію об'єкту.
+// Додати перевірки на undefined, null, NaN.
+// Подумати і реалізувати логіку, в якій кінцевий об'єкт буде мати функції,які в нього були до цього моменту.
+{
+    let user = {
+        name: 'Olena',
+        age: 22,
+        skills: ['uuu', 'tttt'],
+        greteeng: function aaa (){
+            console.log(`hello ${this.name}`)
+        }
+
+    };
+
+    function copy(arr) {
+        let copySt = JSON.stringify(arr);
+        return copyPar = JSON.parse(copySt);
+    }
+    copy(user);
+
+function  perevirka (arr){
+    for (let i in arr){
+        if (typeof arr[i] === "function"){
+            // console.log( `${i}:`, arr[i]);
+
+            copyPar.greteeng = arr[i];
+            copyPar.greteeng();
+        }
+    }
+    console.log( copyPar);
+}
+    perevirka(user);
+
+}
+
+
+
+// #iz6emEsP2BA
+// - є масив
+// let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+// за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration
+//     Зробити все ВИКЛЮЧНО за допомоги інлайн конструкції

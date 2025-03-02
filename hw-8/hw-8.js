@@ -1,15 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
 // #AiN5CoUQ
 // Створити функцію, яка робить глибоку копію об'єкту.
 // Додати перевірки на undefined, null, NaN.
@@ -33,6 +22,7 @@
 
 function  perevirka (arr){
     for (let i in arr){
+
         if (typeof arr[i] === "function"){
             // console.log( `${i}:`, arr[i]);
 
@@ -60,3 +50,28 @@ function  perevirka (arr){
 // ];
 // за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration
 //     Зробити все ВИКЛЮЧНО за допомоги інлайн конструкції
+
+
+
+
+{
+    let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+
+
+    // let mapedCourses = coursesAndDurationArray.map(function (value, index) {
+    //     return {id: index, ...value};
+    // });
+    // console.log(mapedCourses);
+
+    let mapedCourses = coursesAndDurationArray.map((value, index) => ({ id: index, ...value }));
+    console.log(mapedCourses);
+
+}
+

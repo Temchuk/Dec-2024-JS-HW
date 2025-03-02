@@ -14,13 +14,34 @@
 
     };
 
+
+    // if (value == null) або if (value === null || value === undefined)
+    function hasNull(value) {
+        if (value == null || Number.isNaN(value)) {
+            return true;
+        }
+
+        if (value && typeof value === 'object')  {
+            for (const key in value) {
+                if (hasNull(value[key])) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+    console.log(hasNull(user)); // true
+
+
     function copy(arr) {
         let copySt = JSON.stringify(arr);
         return copyPar = JSON.parse(copySt);
     }
     copy(user);
 
-function  perevirka (arr){
+
+    function  perevirkaFun (arr){
     for (let i in arr){
 
         if (typeof arr[i] === "function"){
@@ -32,7 +53,8 @@ function  perevirka (arr){
     }
     console.log( copyPar);
 }
-    perevirka(user);
+    perevirkaFun(user);
+
 
 }
 

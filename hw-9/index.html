@@ -9,7 +9,148 @@
 </head>
 <body>
 
-<h1></h1>
+<ul class="classUl"></ul>
+
+<div class="classDiv"></div>
+<div class="classDiv"></div>
+
+
+<script>
+    {
+        // - створити блок,
+//     - додати йому класи wrap, collapse, alpha, beta
+// - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
+// - додати цей блок в body.
+// - клонувати його повністю, та додати клон в body.
+//
+//
+        let divElement = document.createElement('div');
+
+        // divElement.classList.add('wrap');
+        // divElement.classList.add('collapse');
+        // divElement.classList.add('alpha');
+        // divElement.classList.add('beta');
+        divElement.classList.add('wrap', 'collapse', 'alpha', 'beta');
+        divElement.style.backgroundColor = 'green';
+        divElement.style.color = 'red';
+        divElement.style.fontSize = '20px';
+        divElement.innerText = ('блок');
+        document.body.appendChild(divElement);
+
+
+        // клон
+        let clonedElement = divElement.cloneNode(true); // true означає, що клонується весь вміст блоку
+        clonedElement.innerText = 'клонований блок';
+        document.body.appendChild(clonedElement); // додаємо клонований блок до body
+    }
+
+
+    {
+        // - Є масив:
+        //     ['Main','Products','About us','Contacts']
+        // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
+
+        let t = document.querySelector('.classUl');  // посилання на <ul class="classUl"></ul> повертає перший знайдений елемент
+        let list = ['Main', 'Products', 'About us', 'Contacts'];
+
+        for (const item of list) {
+            let liElement = document.createElement('li'); // створення самого li
+            liElement.classList.add('classLi'); // створення назви класу в li
+            liElement.innerText = item; // заповнення li елементами з масиву
+            t.appendChild(liElement);// додає елемент liElement  (який є елементом <li>) до елемента t (який є елементом <ul>)
+        }
+
+
+    }
+
+    {
+        // - Є масив
+// let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+// Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
+// Завдання робити через цикли.
+
+        let t = document.getElementsByClassName('classDiv')[0];  // посилання на <div class="classDiv"></div> повертає перший знайдений елемент
+
+        let coursesAndDurationArray = [
+            {title: 'JavaScript Complex', monthDuration: 5},
+            {title: 'Java Complex', monthDuration: 6},
+            {title: 'Python Complex', monthDuration: 6},
+            {title: 'QA Complex', monthDuration: 4},
+            {title: 'FullStack', monthDuration: 7},
+            {title: 'Frontend', monthDuration: 4}
+        ];
+
+
+        for (const item of coursesAndDurationArray) {
+            let liElement = document.createElement('div');
+            liElement.classList.add('class');
+            liElement.innerText = item.title + ", " + item.monthDuration;
+            t.appendChild(liElement);
+        }
+
+
+    }
+
+    {
+        //     - Є масив
+        // let coursesAndDurationArray = [
+        //     {title: 'JavaScript Complex', monthDuration: 5},
+        //     {title: 'Java Complex', monthDuration: 6},
+        //     {title: 'Python Complex', monthDuration: 6},
+        //     {title: 'QA Complex', monthDuration: 4},
+        //     {title: 'FullStack', monthDuration: 7},
+        //     {title: 'Frontend', monthDuration: 4}
+        // ];
+        //
+        // За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,
+        // в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'>
+        // з monthDuration елементу.
+        //     Завдання робити через цикли.
+        //
+        let coursesAndDurationArray = [
+            {title: 'JavaScript Complex', monthDuration: 5},
+            {title: 'Java Complex', monthDuration: 6},
+            {title: 'Python Complex', monthDuration: 6},
+            {title: 'QA Complex', monthDuration: 4},
+            {title: 'FullStack', monthDuration: 7},
+            {title: 'Frontend', monthDuration: 4}
+        ];
+
+        let t = document.getElementsByClassName('classDiv')[1];
+
+
+
+        for (const item of coursesAndDurationArray) {
+            let Element = document.createElement('div');
+            Element.classList.add('item');
+            t.appendChild(Element);
+
+            let h1Element = document.createElement('h1');
+            h1Element.classList.add('heading');
+            h1Element.innerText = item.title;
+            Element.appendChild(h1Element); //додає елемент h1Element до Element
+
+            let pElement = document.createElement('p');
+            pElement.classList.add('description');
+            pElement.innerText = item.monthDuration;
+            Element.appendChild(pElement);
+        }
+
+    }
+
+</script>
+
+
+
+
+
 
 
 </body>

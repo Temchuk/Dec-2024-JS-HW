@@ -1,8 +1,4 @@
 
-
-
-
-
 // #8Nmt60ZT
 // - створити блок,
 //     - додати йому класи wrap, collapse, alpha, beta
@@ -11,12 +7,14 @@
 // - клонувати його повністю, та додати клон в body.
 //
 
-{
 
 
 
 
-}
+
+
+
+
 
 
 //     #OPLI89c9G
@@ -25,19 +23,34 @@
 // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
 //
 
-{
-document.write('<div>******************************************************</div>');
-    let list = ['Main', 'Products', 'About us', 'Contacts']
-    function vuvid (arr){
-        document.write(`<ul>`);
-        for (const item of arr) {
-            document.write(`<ul><li> ${item} </li></ul>`);
-        }
-        document.write(`</ul>`);
-    }
-    vuvid(list);
-document.write('<div>******************************************************</div>');
-}
+// {
+// document.write('<div>******************************************************</div>');
+//     let list = ['Main', 'Products', 'About us', 'Contacts'];
+//     function vuvid (arr){
+//         document.write(`<ul>`);
+//         for (const item of arr) {
+//             document.write(`<ul><li> ${item} </li></ul>`);
+//         }
+//         document.write(`</ul>`);
+//     }
+//     vuvid(list);
+// document.write('<div>******************************************************</div>');
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,25 +68,43 @@ document.write('<div>******************************************************</div
 // Завдання робити через цикли.
 //
 // =========================
+//
+// {
+//     document.write('<div>******************************************************</div>');
+//     let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+//     function vuvid (arr){
+//         for (const item of arr) {
+//             document.write(`<div>${item.title}, ${item.monthDuration} </div>`);
+//         }
+//     }
+//     vuvid(coursesAndDurationArray);
+//     document.write('<div>******************************************************</div>');
+// }
 
-{
-    document.write('<div>******************************************************</div>');
-    let coursesAndDurationArray = [
-    {title: 'JavaScript Complex', monthDuration: 5},
-    {title: 'Java Complex', monthDuration: 6},
-    {title: 'Python Complex', monthDuration: 6},
-    {title: 'QA Complex', monthDuration: 4},
-    {title: 'FullStack', monthDuration: 7},
-    {title: 'Frontend', monthDuration: 4}
-];
-    function vuvid (arr){
-        for (const item of arr) {
-            document.write(`<div>${item.title}, ${item.monthDuration} </div>`);
-        }
-    }
-    vuvid(coursesAndDurationArray);
-    document.write('<div>******************************************************</div>');
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //     #Kx1xgoKy8
 //     - Є масив
@@ -94,29 +125,29 @@ document.write('<div>******************************************************</div
 // ==========================
 
 
-{
-    document.write('<div>******************************************************</div>');
-    let coursesAndDurationArray = [
-    {title: 'JavaScript Complex', monthDuration: 5},
-    {title: 'Java Complex', monthDuration: 6},
-    {title: 'Python Complex', monthDuration: 6},
-    {title: 'QA Complex', monthDuration: 4},
-    {title: 'FullStack', monthDuration: 7},
-    {title: 'Frontend', monthDuration: 4}
-];
-
-    function vuvid (arr){
-        for (const item of arr) {
-            document.write(`<div class='item'>
-                <h1 class='heading'>${item.title}</h1>
-                <p class='description'>${item.monthDuration} </h1>
-            </div>`);
-        }
-    }
-    vuvid(coursesAndDurationArray);
-    document.write('<div>******************************************************</div>');
-}
-
+// {
+//     document.write('<div>******************************************************</div>');
+//     let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+//
+//     function vuvid (arr){
+//         for (const item of arr) {
+//             document.write(`<div class='item'>
+//                 <h1 class='heading'>${item.title}</h1>
+//                 <p class='description'>${item.monthDuration} </h1>
+//             </div>`);
+//         }
+//     }
+//     vuvid(coursesAndDurationArray);
+//     document.write('<div>******************************************************</div>');
+// }
+//
 
 
 

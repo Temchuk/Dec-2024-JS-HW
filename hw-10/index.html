@@ -32,6 +32,25 @@
 
 
 
+
+
+
+
+<!--***********************************************************************************************-->
+<form action="" name="f3">
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="surname" placeholder="surname">
+    <input type="text" name="age" placeholder="age">
+    <button id="button3">verify</button>
+</form>
+<div id="div3" style="margin-top: 20px; color: #d92222;">Ваше ім'я</div>
+<!--***********************************************************************************************-->
+
+
+
+
+
+
 <script>
     // #sH8c4er
     // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript,
@@ -93,9 +112,48 @@
 
 
 
+    let name ;
+    document.forms.f3.name.oninput = function () {
+        return  name = this.value;
+    };
+
+    let surname ;
+    document.forms.f3.surname.oninput = function () {
+        return  surname = this.value;
+    };
+
+    let age ;
+    document.forms.f3.age.oninput = function () {
+        return  age = this.value;
+    };
+
+    let k = document.getElementById('div3');
+
+
+    document.getElementById('button3').onclick = function (e) {
+        e.preventDefault();
 
 
 
+
+        if (!isNaN(age) && age !== "" && age.trim() !== "" && age !==","){
+            if (isNaN(name) && name !== "" && name.trim() !== "" && name !== undefined){
+                if (isNaN(surname) && surname !== "" && surname.trim() !== ""){
+                    k.innerText = `${name} ${surname} ${age}`;
+                }else {
+                    alert('не коректні дані у полі прізвище ')
+                }
+            }else {
+                alert('не коректні дані у полі імя')
+            }
+        }else {
+            alert('не коректні дані у полі вік')
+        }
+
+
+
+
+    };
 
 
 

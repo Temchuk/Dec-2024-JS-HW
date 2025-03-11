@@ -38,9 +38,9 @@
 
 <!--***********************************************************************************************-->
 <form action="" name="f3">
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="surname" placeholder="surname">
-    <input type="text" name="age" placeholder="age">
+    <input type="text" name="name" placeholder="name" required>
+    <input type="text" name="surname" placeholder="surname" required>
+    <input type="text" name="age" placeholder="age" required>
     <button id="button3">verify</button>
 </form>
 <div id="div3" style="margin-top: 20px; color: #d92222;">Ваше ім'я</div>
@@ -83,8 +83,7 @@
 
     let a ;
     document.forms.f2.age.oninput = function () {
-        return  a = this.value;
-
+         a = this.value;
     };
 
     document.getElementById('button2').onclick = function (e) {
@@ -111,21 +110,21 @@
     // під формою з'явився блок з вашим об'єктом
 
 
+    let name, surname, age;
 
-    let name ;
     document.forms.f3.name.oninput = function () {
-        return  name = this.value;
+        name = this.value;
     };
 
-    let surname ;
     document.forms.f3.surname.oninput = function () {
-        return  surname = this.value;
+        surname = this.value;
     };
 
-    let age ;
     document.forms.f3.age.oninput = function () {
-        return  age = this.value;
+        age = this.value;
     };
+
+
 
     let k = document.getElementById('div3');
 
@@ -134,10 +133,8 @@
         e.preventDefault();
 
 
-
-
         if (!isNaN(age) && age !== "" && age.trim() !== "" && age !==","){
-            if (isNaN(name) && name !== "" && name.trim() !== "" && name !== undefined){
+            if (isNaN(name) && name !== "" && name.trim() !== "" ){
                 if (isNaN(surname) && surname !== "" && surname.trim() !== ""){
                     k.innerText = `${name} ${surname} ${age}`;
                 }else {
@@ -149,8 +146,6 @@
         }else {
             alert('не коректні дані у полі вік')
         }
-
-
 
 
     };

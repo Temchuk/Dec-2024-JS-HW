@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Дата та час останнього відвідування:</h1>
+<div id="lastVisit"></div>
+
+<script>
+
+    let t = document.getElementById('lastVisit');
+
+   let y = JSON.parse(localStorage.getItem('history')) || [];
+   // console.log( typeof y);
+
+   for (const i of y) {
+       let elem = document.createElement('h2');
+       elem.innerText = i;
+       t.appendChild(elem);
+       console.log(i);
+   }
+
+</script>
+
+</body>
+</html>

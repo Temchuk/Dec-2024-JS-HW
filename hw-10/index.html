@@ -11,22 +11,26 @@
 <body>
 
 <!--*********************************************************************************************-->
+<div style=" background-color: #e1f3da; margin-top: 50px; width: 300px; height: 60px;">
 <form action="" name="f1">
     <input type="text" name="login" placeholder="login">
     <button id="button">click</button>
 </form>
 
-<div id="div" style="margin-top: 20px; color: blue;">666</div>
+<div id="div" style="margin-top: 20px; color: blue;">login:</div>
+</div>
 <!--*********************************************************************************************-->
 
 
 
 
 <!--*********************************************************************************************-->
+<div style=" background-color: #e1f3da; margin-top: 50px; width: 300px">
 <form action="" name="f2">
     <input type="text" name="age" placeholder="age">
     <button id="button2">verify</button>
 </form>
+</div>
 <!--*********************************************************************************************-->
 
 
@@ -37,6 +41,7 @@
 
 
 <!--***********************************************************************************************-->
+<div style=" background-color: #e1f3da; margin-top: 50px; width: 300px">
 <form action="" name="f3">
     <input type="text" name="name" placeholder="name" required>
     <input type="text" name="surname" placeholder="surname" required>
@@ -44,6 +49,40 @@
     <button id="button3">verify</button>
 </form>
 <div id="div3" style="margin-top: 20px; color: #d92222;">Ваше ім'я</div>
+</div>
+<!--***********************************************************************************************-->
+
+
+
+
+
+
+
+<!--***********************************************************************************************-->
+<div id="div4" style="background-color: #5fd6cb; margin-top: 50px; width: 300px">
+    <h1>Кількість перезавантажень:</h1>
+    <h2 id="counter">0</h2>
+    <button id="resetButton">Обнулити лічильник</button>
+</div>
+<!--***********************************************************************************************-->
+
+
+
+
+
+
+
+
+
+
+<!--***********************************************************************************************-->
+<div style=" background-color: #e1f3da; margin-top: 50px; width: 300px">
+<form action="" name="f5">
+    <input type="text" name="mass" placeholder="mass kg">
+</form>
+
+<div id="div5" style=" background-color: #df9adc;">Маса у фунтах:</div>
+</div>
 <!--***********************************************************************************************-->
 
 
@@ -149,7 +188,56 @@
 
 
     };
+// *******************************************************************************************************
 
+
+
+//*********************************************************************************************************
+    // #2VaLt4vDczH
+    // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені
+    // сторінки буде додавати до неї +1
+
+    window.onload = function () {
+        let count = localStorage.getItem('x') || 0;
+        count = parseInt(count) + 1;
+
+        localStorage.setItem('x', count);
+        console.log(count);
+
+        localStorage.setItem('x', count);
+        document.getElementById('counter').innerText = count;
+
+        document.getElementById('resetButton').onclick = function () {
+            localStorage.removeItem('x');
+            console.log('обнулення: 0')
+            document.getElementById('counter').innerText = 0;
+        }
+    }
+
+
+// *************************************************************************************************
+
+
+
+
+
+
+
+// *************************************************************************************************
+    // #Jg0gPO00
+    // створити конвертор ваги з кг в фунти. данні заповнюються через інпут. При введенні даних обрахунок
+    // стається миттєво, без натискань додаткових кнопок
+
+    let element = document.getElementById('div5');
+
+    let mass = element.innerText;
+
+    document.forms.f5.mass.oninput = function () {
+
+        element.innerText = mass + this.value * 2.20462;
+    };
+
+// *************************************************************************************************
 
 
 

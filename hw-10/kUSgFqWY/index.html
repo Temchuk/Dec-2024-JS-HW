@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+        .my-class {
+            background-color: lightblue;
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #000;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+
+<!--***********************************************************************************************-->
+<div style=" background-color: #e1f3da; margin-top: 50px; width: 300px">
+    <form action="" name="f">
+        <input type="text" name="lines" placeholder="кількість рядків">
+        <input type="text" name="columns" placeholder="кількість ячеєк">
+        <input type="text" name="text" placeholder="вміст ячеєк">
+        <button id="button">build</button>
+    </form>
+</div>
+<!--***********************************************************************************************-->
+
+
+
+<table class="classTable"></table>
+
+
+
+
+
+
+<script>
+
+// ********************************************************************************
+// #kUSgFqWY
+// Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст
+// ячеєк.
+// При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+// ********************************************************************************
+
+
+let lines, columns, text;
+document.forms.f.lines.oninput = function () {
+    lines = +this.value;
+};
+
+
+document.forms.f.columns.oninput = function () {
+    columns = +this.value;
+};
+
+document.forms.f.text.oninput = function () {
+    text = this.value;
+};
+
+document.getElementById('button').onclick = function (e) {
+    e.preventDefault();
+    console.log(lines, columns, text);
+
+}
+
+
+
+
+    // Створюємо блок <div>
+    let divElement = document.createElement('div');
+
+// Додаємо клас до блоку
+    divElement.classList.add('my-class');
+
+// Додаємо текстовий вміст
+//     divElement.textContent = "Це новий блок!";
+
+// Додаємо стилі (опціонально)
+    divElement.style.backgroundColor = "lightblue";
+    divElement.style.padding = "20px";
+    divElement.style.margin = "10px";
+
+// Вставляємо блок на сторінку
+    document.body.appendChild(divElement);
+
+
+
+// // Створюємо таблицю
+// let table = document.createElement('table');
+// table.style.backgroundColor = "red";
+// table.style.border = "5px";
+//
+//
+// // Створюємо тіло таблиці
+// let tbody = document.createElement('tbody');
+//
+//
+// document.body.appendChild(table);
+
+
+
+
+let t = document.querySelector('.classTable');  // посилання на <ul class="classUl"></ul> повертає перший знайдений елемент
+let liElement = document.createElement('tr'); // створення самого li
+t.appendChild(liElement);// додає елемент liElement  (який є елементом <li>) до елемента t (який є елементом <ul>)
+
+
+
+
+
+
+
+
+
+
+
+    function a (l){
+
+
+
+     for (let i=1; i<=l; i++) {
+        document.write(`<tr> ${i} </tr>`);
+    }
+
+
+}
+a(lines);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+

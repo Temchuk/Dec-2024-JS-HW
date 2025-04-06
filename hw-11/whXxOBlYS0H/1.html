@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+
+        .div{
+            width: 100vw;
+            background-color: #c6f6f3;
+            margin-bottom: 2%;
+            display: flex;
+            flex-direction: row;
+            padding: 5%;
+
+        }
+        .recipe{
+            width: 50%;
+        }
+        .img1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .img2{
+            width: 50%;
+            height: auto;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+<script>
+
+//    #whXxOBlYS0H
+//
+//– взяти https://dummyjson.com/docs/recipes та вивести інформацію про всі рецепти.
+//// Інгредієнти повинні бути список під час відображення.
+
+
+
+
+    fetch('https://dummyjson.com/recipes')
+        .then(value => value.json())
+        .then(res => {
+            console.log(res);
+            let { recipes } = res;
+
+
+
+            const container = document.createElement('div');
+
+            for (const recipe of recipes) {
+                let recipeHTML = `
+                    <div class="div">
+                    <div class="recipe">
+                        <h1>Recipe: ${recipe.id}</h1>
+                        <p><strong>Name:</strong> ${recipe.name}</p>
+                        <p><strong>Calories per serving:</strong> ${recipe.caloriesPerServing}</p>
+                        <p><strong>Cook time:</strong> ${recipe.cookTimeMinutes} min</p>
+                        <p><strong>Cuisine:</strong> ${recipe.cuisine}</p>
+                        <p><strong>Difficulty:</strong> ${recipe.difficulty}</p>
+                        <p><strong>Meal type:</strong> ${recipe.mealType}</p>
+                        <p><strong>Prep time:</strong> ${recipe.prepTimeMinutes} min</p>
+                        <p><strong>Rating:</strong> ${recipe.rating} (${recipe.reviewCount} reviews)</p>
+                        <p><strong>Servings:</strong> ${recipe.servings}</p>
+                        <p><strong>Tags:</strong> ${recipe.tags.join(', ')}</p>
+                        <p><strong>User ID:</strong> ${recipe.userId}</p>
+
+                        <p><strong>Ingredients:</strong></p>
+                        <ul>
+                            ${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                        </ul>
+
+                        <p><strong>Instructions:</strong></p>
+                        <ol>
+                            ${recipe.instructions.map(inst => `<li>${inst}</li>`).join('')}
+                        </ol>
+
+                        </div>
+<div class="img1">
+                        <img src="${recipe.image}" alt="img" class="img2" >
+
+
+                        </div>
+                        </div>
+                `;
+
+
+
+                container.insertAdjacentHTML('beforeend', recipeHTML);
+
+            }
+
+            document.body.appendChild(container);
+        })
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--for (const recipe of recipes) {-->
+<!--document.write(`<div class="recipe">`);-->
+<!--    document.write(`<h1>Recipe: ${recipe.id}</h1>`);-->
+<!--    document.write(`<p><strong>Name:</strong> ${recipe.name}</p>`);-->
+<!--    document.write(`<p><strong>Calories per serving:</strong> ${recipe.caloriesPerServing}</p>`);-->
+<!--    document.write(`<p><strong>Cook time:</strong> ${recipe.cookTimeMinutes} min</p>`);-->
+<!--    document.write(`<p><strong>Cuisine:</strong> ${recipe.cuisine}</p>`);-->
+<!--    document.write(`<p><strong>Difficulty:</strong> ${recipe.difficulty}</p>`);-->
+<!--    document.write(`<p><strong>Meal type:</strong> ${recipe.mealType}</p>`);-->
+<!--    document.write(`<p><strong>Prep time:</strong> ${recipe.prepTimeMinutes} min</p>`);-->
+<!--    document.write(`<p><strong>Rating:</strong> ${recipe.rating} (${recipe.reviewCount} reviews)</p>`);-->
+<!--    document.write(`<p><strong>Servings:</strong> ${recipe.servings}</p>`);-->
+<!--    document.write(`<p><strong>Tags:</strong> ${recipe.tags.join(', ')}</p>`);-->
+<!--    document.write(`<p><strong>User ID:</strong> ${recipe.userId}</p>`);-->
+
+<!--    document.write(`<p><strong>Ingredients:</strong></p>`);-->
+<!--    document.write(`<ul>`);-->
+<!--        for (const ingredient of recipe.ingredients) {-->
+<!--        document.write(`<li>${ingredient}</li>`);-->
+<!--        }-->
+<!--        document.write(`</ul>`);-->
+
+<!--    document.write(`<p><strong>Instructions:</strong> ${recipe.instructions}</p>`);-->
+
+<!--    document.write(`<img src="${recipe.image}" alt="image">`);-->
+
+<!--    document.write(`</div>`);-->
+<!--}-->
+
+
+
+<!--document.body.appendChild(recipeCard);-->
+
+<!--});-->
+
+
+
+
+

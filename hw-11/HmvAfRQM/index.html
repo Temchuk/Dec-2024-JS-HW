@@ -9,5 +9,63 @@
 </head>
 <body>
 
+
+
+
+
+<script>
+    // #HmvAfRQM
+    // - взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини.
+    // Відобразити всі поля кожної корзини.
+
+    fetch('https://dummyjson.com/carts')
+        .then(value => value.json())
+        .then(res => {
+            console.log(res);
+             let {carts} = res
+
+            document.write(`<ul>`);
+          for (const cart of carts )  {
+              document.write(`<h1>${cart.id}</h1>`);
+
+              document.write(`<li>Total discounted: ${cart.discountedTotal}</li>`);
+
+              document.write(`<li>Total: ${cart.total}</li>`);
+
+              document.write(`<li>Total products: ${cart.totalProducts}</li>`);
+
+              document.write(`<li>Total quantity: ${cart.totalQuantity}</li>`);
+
+              document.write(`<li>User id: ${cart.userId}</li>`);
+
+              document.write(`<li>Products:</li>`);
+
+              document.write(`<ul>`);
+              for (const product of cart.products ){
+                  document.write(`<ul>Id: ${product.id}</ul>`);
+
+                  document.write(`<li>price: ${product.price},</li>`);
+                  document.write(`<li>quantity: ${product.quantity}</li>`);
+                  document.write(`<li>title: ${product.title}</li>`);
+                  document.write(`<li>total: ${product.total}</li>`);
+
+                  document.write(`<li>discountPercentage: ${product.discountPercentage}</li>`);
+                  document.write(`<li>discountedTotal: ${product.discountedTotal}</li>`);
+                  document.write(`<img src="${product.thumbnail}" alt="img">`);
+              }
+              document.write(`</ul>`);
+
+
+          }
+            document.write(`</ul>`);
+
+
+        });
+
+
+
+
+</script>
+
 </body>
 </html>

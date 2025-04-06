@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="div4" style="background-color: #5fd6cb; margin-top: 50px; width: 300px">
+    <h1>Кількість перезавантажень:</h1>
+    <h2 id="counter">0</h2>
+    <h2 id="counter2">100</h2>
+    <button id="resetButton">Обнулити лічильник</button>
+</div>
+
+<script>
+    //     #bq1zkx7WP
+    // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком,
+    // в середині якого є значення "100грн"
+    // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+    //     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після
+    //     попереднього.
+    //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+
+
+
+
+    // setTimeout( function (){
+    //
+    //     let count = localStorage.getItem('x') || 0;
+    //     count = parseInt(count) + 1;
+    //
+    //
+    // }, 1000  );
+
+
+
+
+
+
+    window.onload = function () {
+
+
+        setTimeout( function (){
+
+            let count = localStorage.getItem('x') || 0;
+            count = parseInt(count) + 1;
+
+            localStorage.setItem('x', count);
+            console.log(count);
+
+            localStorage.setItem('x', count);
+            document.getElementById('counter').innerText = count;
+
+
+
+            let count2 = localStorage.getItem('x2') || 100;
+            count2 = parseInt(count2) + 10;
+
+            localStorage.setItem('x2', count2);
+            console.log(count2);
+
+            localStorage.setItem('x2', count2);
+            document.getElementById('counter2').innerText = count2 + ' грн';
+
+
+
+        }, 2000  );
+
+
+        document.getElementById('resetButton').onclick = function () {
+            localStorage.removeItem('x');
+            console.log('обнулення: 0')
+            document.getElementById('counter').innerText = 0;
+
+
+
+            localStorage.removeItem('x2');
+            console.log('обнулення: 100')
+            document.getElementById('counter2').innerText = 100 + ' грн';
+        }
+    }
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
